@@ -51,7 +51,7 @@ export default function HomePage() {
       <Header cartCount={cartCount} totalPrice={totalPrice} />
       <main className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <HeroSection />
-        <FlavorsSection addToCart={addToCart} />
+        <FlavorsSection cart={cart} addToCart={addToCart} />
         <CartCheckoutSection
           cart={cart}
           updateQuantity={updateQuantity}
