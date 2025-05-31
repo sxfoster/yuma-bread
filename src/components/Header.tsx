@@ -63,8 +63,8 @@ export default function Header({ cartCount }: HeaderProps) {
             <li>
               <Link
                 href="#checkout"
-                className="flex items-center py-2 font-medium text-charcoal hover:text-brick"
                 onClick={closeMenu}
+                className="flex items-center py-2 font-medium text-charcoal hover:text-brick"
               >
                 <ShoppingCartIcon className="h-5 w-5 mr-2" />
                 Cart ({cartCount})
