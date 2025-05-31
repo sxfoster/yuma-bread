@@ -6,9 +6,10 @@ import { useState } from 'react';
 
 interface HeaderProps {
   cartCount: number;
+  totalPrice: number;
 }
 
-export default function Header({ cartCount }: HeaderProps) {
+export default function Header({ cartCount, totalPrice }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => setMobileMenuOpen(!mobileMenuOpen);
@@ -38,13 +39,14 @@ export default function Header({ cartCount }: HeaderProps) {
         <nav className="hidden md:flex space-x-6 items-center">
           <a href="#flavors" className="font-medium text-charcoal hover:text-brick">Our Breads</a>
           <a href="#checkout" className="font-medium text-charcoal hover:text-brick">Order Now</a>
-          <Link href="#checkout" className="relative">
+          <Link href="#checkout" className="relative flex items-center">
             <ShoppingCartIcon className="h-6 w-6 text-charcoal hover:text-brick" />
             {cartCount > 0 && (
-              <span className="absolute -top-1 -right-2 bg-brick text-white text-xs font-bold px-1 rounded-full">
+              <span className="absolute -top-1 -right-3 bg-brick text-white text-xs font-bold px-1 rounded-full">
                 {cartCount}
               </span>
             )}
+            <span className="ml-2 font-medium text-charcoal">${totalPrice.toFixed(2)}</span>
           </Link>
         </nav>
 
@@ -67,7 +69,7 @@ export default function Header({ cartCount }: HeaderProps) {
                 className="flex items-center py-2 font-medium text-charcoal hover:text-brick"
               >
                 <ShoppingCartIcon className="h-5 w-5 mr-2" />
-                Cart ({cartCount})
+                Cart ({cartCount}) - ${totalPrice.toFixed(2)}
               </Link>
             </li>
           </ul>

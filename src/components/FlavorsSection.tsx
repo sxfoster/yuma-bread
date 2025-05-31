@@ -127,7 +127,7 @@ export default function FlavorsSection({ addToCart }: FlavorsSectionProps) {
                     d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.6 8m1.6-8L5 5m16 0v2m-5 9v2a1 1 0 001 1h3m-4-3h4m-6-5H9m0 0L7 5"
                   />
                 </svg>
-                Add to Cart
+                Add {quantities[flavor.id]} to Cart
               </button>
             </div>
           </div>
