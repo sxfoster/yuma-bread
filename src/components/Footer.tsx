@@ -11,10 +11,20 @@ export function Footer() {
         </p>
         <div className="mt-4 flex justify-center space-x-4">
           {/* Instagram & Facebook icons as shown in the code sample */}
-          <a href="#" aria-label="Instagram">
+          <a
+            href="https://instagram.com"
+            aria-label="Instagram"
+            target="_blank"
+            rel="noopener"
+          >
             <Instagram className="h-5 w-5 text-brick hover:text-ochre transition" />
           </a>
-          <a href="#" aria-label="Facebook">
+          <a
+            href="https://facebook.com"
+            aria-label="Facebook"
+            target="_blank"
+            rel="noopener"
+          >
             <Facebook className="h-5 w-5 text-brick hover:text-ochre transition" />
           </a>
         </div>
