@@ -20,9 +20,6 @@ export function AppHeader({ cartItemCount }: AppHeaderProps) {
           <Link href="#flavors" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
             Our Breads
           </Link>
-          <Link href="#order" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
-            Order Now
-          </Link>
           <Link href="#cart" className="relative flex items-center text-sm font-medium text-foreground hover:text-primary transition-colors">
             <ShoppingCart className="h-6 w-6" />
             {cartItemCount > 0 && (

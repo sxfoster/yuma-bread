@@ -23,12 +23,6 @@ export default function HeroSection() {
           >
             Discover Our Breads
           </a>
-          <a
-            href="#checkout"
-            className="inline-block px-6 py-3 border-2 border-brick text-brick font-semibold rounded-md text-sm hover:bg-brick hover:text-parchment transition"
-          >
-            Order for Pickup
-          </a>
         </div>
       </div>
     </section>
