@@ -70,22 +70,24 @@ export default function HomePage() {
   }
 
   return (
-    <div className="flex flex-col min-h-screen bg-background text-foreground">
-      <AppHeader cartItemCount={cartItemCount} />
-      <main className="flex-grow">
-        <HeroSection />
-        <FlavorsSection onAddToCart={handleAddToCart} />
-        {cartItems.length > 0 && (
-          <CartSection
-            cartItems={cartItems}
-            onUpdateQuantity={handleUpdateCartQuantity}
-            onRemoveItem={handleRemoveFromCart}
-            totalPrice={cartTotal}
-          />
-        )}
-        <PurchaseForm cartItems={cartItems} onOrderSuccess={handleClearCart} totalPrice={cartTotal} />
-      </main>
-      <AppFooter />
+    <div className="bg-parchment text-charcoal font-body min-h-screen">
+      <div className="flex flex-col min-h-screen bg-background text-foreground">
+        <AppHeader cartItemCount={cartItemCount} />
+        <main className="flex-grow">
+          <HeroSection />
+          <FlavorsSection onAddToCart={handleAddToCart} />
+          {cartItems.length > 0 && (
+            <CartSection
+              cartItems={cartItems}
+              onUpdateQuantity={handleUpdateCartQuantity}
+              onRemoveItem={handleRemoveFromCart}
+              totalPrice={cartTotal}
+            />
+          )}
+          <PurchaseForm cartItems={cartItems} onOrderSuccess={handleClearCart} totalPrice={cartTotal} />
+        </main>
+        <AppFooter />
+      </div>
     </div>
   );
 }
