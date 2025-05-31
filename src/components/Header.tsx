@@ -17,27 +17,34 @@ export default function Header({ cartCount }: HeaderProps) {
   return (
     <header className="sticky top-0 bg-parchment shadow-sm z-50">
       <div className="max-w-3xl mx-auto flex items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
-        <Link href="#hero">
-          <a className="flex items-center space-x-2">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-brick" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 16l7-7 7 7M5 8l7-7 7 7" />
-            </svg>
-            <span className="text-xl font-heading text-brick">Yuma Hearth</span>
-          </a>
+        <Link href="#hero" className="flex items-center space-x-2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-6 w-6 text-brick"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M5 16l7-7 7 7M5 8l7-7 7 7"
+            />
+          </svg>
+          <span className="text-xl font-heading text-brick">Yuma Hearth</span>
         </Link>
 
         <nav className="hidden md:flex space-x-6 items-center">
           <a href="#flavors" className="font-medium text-charcoal hover:text-brick">Our Breads</a>
           <a href="#checkout" className="font-medium text-charcoal hover:text-brick">Order Now</a>
-          <Link href="#checkout">
-            <a className="relative">
-              <ShoppingCartIcon className="h-6 w-6 text-charcoal hover:text-brick" />
-              {cartCount > 0 && (
-                <span className="absolute -top-1 -right-2 bg-brick text-white text-xs font-bold px-1 rounded-full">
-                  {cartCount}
-                </span>
-              )}
-            </a>
+          <Link href="#checkout" className="relative">
+            <ShoppingCartIcon className="h-6 w-6 text-charcoal hover:text-brick" />
+            {cartCount > 0 && (
+              <span className="absolute -top-1 -right-2 bg-brick text-white text-xs font-bold px-1 rounded-full">
+                {cartCount}
+              </span>
+            )}
           </Link>
         </nav>
 
@@ -54,11 +61,13 @@ export default function Header({ cartCount }: HeaderProps) {
             <li><a href="#flavors" onClick={closeMenu} className="block py-2 font-medium text-charcoal hover:text-brick">Our Breads</a></li>
             <li><a href="#checkout" onClick={closeMenu} className="block py-2 font-medium text-charcoal hover:text-brick">Order Now</a></li>
             <li>
-              <Link href="#checkout">
-                <a onClick={closeMenu} className="flex items-center py-2 font-medium text-charcoal hover:text-brick">
-                  <ShoppingCartIcon className="h-5 w-5 mr-2" />
-                  Cart ({cartCount})
-                </a>
+              <Link
+                href="#checkout"
+                className="flex items-center py-2 font-medium text-charcoal hover:text-brick"
+                onClick={closeMenu}
+              >
+                <ShoppingCartIcon className="h-5 w-5 mr-2" />
+                Cart ({cartCount})
               </Link>
             </li>
           </ul>
