@@ -1,13 +1,17 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Wheat, Flame } from 'lucide-react';
 
 interface FlavorsSectionProps {
-  addToCart: (item: { id: string; name: string; price: number }, quantity: number) => void;
+  cart: { id: string; name: string; price: number; quantity: number }[];
+  addToCart: (
+    item: { id: string; name: string; price: number },
+    quantity: number
+  ) => void;
 }
 
-export default function FlavorsSection({ addToCart }: FlavorsSectionProps) {
+export default function FlavorsSection({ cart, addToCart }: FlavorsSectionProps) {
   const flavors = [
     {
       id: "traditional-sourdough",
@@ -48,11 +52,29 @@ export default function FlavorsSection({ addToCart }: FlavorsSectionProps) {
     },
   ];
 
+  const getExistingQty = (flavorId: string) => {
+    const found = cart.find((ci) => ci.id === flavorId);
+    return found ? found.quantity : 0;
+  };
+  const maxPerFlavor = 5;
+
   const [quantities, setQuantities] = useState<Record<string, number>>({
     "traditional-sourdough": 1,
     "jalapeno-cheddar": 1,
     "honey-cinnamon-spice": 1,
   });
+
+  useEffect(() => {
+    const newQuantities: Record<string, number> = { ...quantities };
+    flavors.forEach((flavor) => {
+      const existing = getExistingQty(flavor.id);
+      const available = maxPerFlavor - existing;
+      if (newQuantities[flavor.id] > available) {
+        newQuantities[flavor.id] = available > 0 ? available : 1;
+      }
+    });
+    setQuantities(newQuantities);
+  }, [cart]);
 
   return (
     <section id="flavors" className="mt-16">
@@ -61,11 +83,14 @@ export default function FlavorsSection({ addToCart }: FlavorsSectionProps) {
         Each loaf is a testament to our passion for baking, crafted with the finest ingredients.
       </p>
       <div className="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-        {flavors.map((flavor) => (
-          <div
-            key={flavor.id}
-            className="bg-parchment-light rounded-lg shadow-md overflow-hidden flex flex-col"
-          >
+        {flavors.map((flavor) => {
+          const existingQty = getExistingQty(flavor.id);
+          const availableToAdd = maxPerFlavor - existingQty;
+          return (
+            <div
+              key={flavor.id}
+              className="bg-parchment-light rounded-lg shadow-md overflow-hidden flex flex-col"
+            >
             <div className="h-48 w-full bg-gray-300">
               <img
                 src={`https://via.placeholder.com/600x400.png?text=${encodeURIComponent(
@@ -91,47 +116,64 @@ export default function FlavorsSection({ addToCart }: FlavorsSectionProps) {
                     onChange={(e) =>
                       setQuantities((prev) => ({
                         ...prev,
-                        [flavor.id]: Math.min(5, Number(e.target.value)),
+                        [flavor.id]: Math.min(
+                          availableToAdd,
+                          Number(e.target.value)
+                        ),
                       }))
                     }
-                    className="rounded-md border border-ochre bg-parchment-light px-2 py-1 text-sm text-charcoal focus:border-brick focus:ring focus:ring-brick/20"
+                    disabled={existingQty >= maxPerFlavor}
+                    className={`rounded-md border border-ochre bg-parchment-light px-2 py-1 text-sm text-charcoal focus:border-brick focus:ring focus:ring-brick/20 ${
+                      existingQty >= maxPerFlavor
+                        ? "opacity-50 cursor-not-allowed"
+                        : ""
+                    }`}
                   >
-                    {[1, 2, 3, 4, 5].map((n) => (
-                      <option key={n} value={n}>
-                        {n}
-                      </option>
-                    ))}
+                    {[...Array(5)].map((_, i) => {
+                      const n = i + 1;
+                      return (
+                        <option key={n} value={n} disabled={n > availableToAdd}>
+                          {n}
+                        </option>
+                      );
+                    })}
                   </select>
+                  {availableToAdd > 0 && availableToAdd <= 2 && (
+                    <p className="mt-1 text-yellow-600 text-xs">
+                      Only {availableToAdd} more allowed.
+                    </p>
+                  )}
                 </div>
               </div>
-              <button
-                onClick={() =>
-                  addToCart(
-                    { id: flavor.id, name: flavor.name, price: 10 },
-                    quantities[flavor.id]
-                  )
-                }
-                className="mt-4 w-full bg-brick text-parchment font-semibold rounded-md py-2 flex items-center justify-center hover:bg-brick/90 transition"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5 mr-2"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
+              {existingQty >= maxPerFlavor ? (
+                <div className="mt-4">
+                  <button
+                    disabled
+                    className="w-full bg-gray-400 text-gray-200 font-semibold rounded-md py-2 cursor-not-allowed"
+                  >
+                    Limit Reached
+                  </button>
+                  <p className="mt-2 text-center text-red-600 text-sm">
+                    You’ve reached the 5-loaf limit for {flavor.name}.
+                  </p>
+                </div>
+              ) : (
+                <button
+                  onClick={() =>
+                    addToCart(
+                      { id: flavor.id, name: flavor.name, price: 10 },
+                      Math.min(availableToAdd, quantities[flavor.id])
+                    )
+                  }
+                  className="mt-4 w-full bg-brick text-parchment font-semibold rounded-md py-2 flex items-center justify-center hover:bg-brick/90 transition"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.6 8m1.6-8L5 5m16 0v2m-5 9v2a1 1 0 001 1h3m-4-3h4m-6-5H9m0 0L7 5"
-                  />
-                </svg>
-                Add {quantities[flavor.id]} to Cart
-              </button>
+                  Add to Cart
+                </button>
+              )}
             </div>
           </div>
-        ))}
+        );
+        })}
       </div>
     </section>
   );
