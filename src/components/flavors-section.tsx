@@ -1,5 +1,4 @@
 
-import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import type { BreadFlavor } from '@/types';
@@ -27,14 +26,11 @@ export function FlavorsSection({ onAddToCart }: FlavorsSectionProps) {
             <Card key={flavor.id} className="flex flex-col overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-lg">
               <CardHeader className="p-0">
                 <div className="aspect-[3/2] relative w-full">
-                  <Image
-                    src={flavor.imageSrc}
-                    alt={flavor.name}
-                    fill={true}
-                    style={{objectFit: 'cover'}}
+                  <img
+                    src={`https://via.placeholder.com/600x400.png?text=${encodeURIComponent(flavor.name)}`}
+                    alt={`${flavor.name} image`}
+                    className="rounded-t-lg object-cover w-full h-full"
                     data-ai-hint={flavor.imageHint}
-                    className="rounded-t-lg"
-                    priority={flavor.id === BREAD_FLAVORS[0].id} // Prioritize loading the first image
                   />
                 </div>
               </CardHeader>
