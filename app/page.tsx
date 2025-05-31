@@ -1,6 +1,6 @@
 "use client"; 
 import { useState } from "react";
-import Header from "../src/components/Header";
+import Header from "@/components/Header";
 import HeroSection from "../src/components/HeroSection";
 import FlavorsSection from "../src/components/FlavorsSection";
 import CartCheckoutSection from "../src/components/CartCheckoutSection";
