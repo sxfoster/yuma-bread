@@ -1,0 +1,113 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'PT Sans', sans-serif; /* Default body font */
+}
+
+@layer base {
+  :root {
+    --background: 46 67% 91%; /* Parchment Cream #F7EFD9 */
+    --foreground: 23 28% 13%; /* Dark Roast Coffee #2B1F18 */
+
+    --card: 46 67% 94%; /* Lighter Parchment Cream for cards */
+    --card-foreground: 23 28% 13%; /* Dark Roast Coffee */
+
+    --popover: 46 67% 94%; /* Lighter Parchment Cream */
+    --popover-foreground: 23 28% 13%; /* Dark Roast Coffee */
+
+    --primary: 0 60% 40%; /* Brick Red #A52A2A (CTA) */
+    --primary-foreground: 46 67% 91%; /* Parchment Cream for text on primary */
+
+    --secondary: 352 63% 30%; /* Deep Burgundy #7D1D29 */
+    --secondary-foreground: 46 67% 91%; /* Parchment Cream for text on secondary */
+
+    --muted: 46 45% 88%; /* Muted Parchment Cream */
+    --muted-foreground: 23 28% 35%; /* Darker muted coffee */
+
+    --accent: 43 50% 46%; /* Antique Gold #B08B39 */
+    --accent-foreground: 23 28% 13%; /* Dark Roast Coffee for text on accent */
+
+    --destructive: 0 84.2% 60.2%; /* Default or adjust if needed */
+    --destructive-foreground: 0 0% 98%; /* Default or adjust if needed */
+
+    --border: 46 50% 85%; /* Border color based on Parchment Cream */
+    --input: 46 60% 88%; /* Input background based on Parchment Cream */
+    --ring: 0 60% 40%; /* Ring color based on Brick Red (Primary) */
+    
+    --chart-1: 0 60% 40%;   /* Primary (Brick Red) */
+    --chart-2: 43 50% 46%;  /* Accent (Antique Gold) */
+    --chart-3: 352 63% 45%; /* Lighter Deep Burgundy */
+    --chart-4: 23 28% 40%;  /* Medium Dark Roast Coffee */
+    --chart-5: 43 50% 60%;  /* Lighter Antique Gold */
+
+    --radius: 0.8rem;
+
+    /* Sidebar specific colors */
+    --sidebar-background: 46 67% 90%; /* Slightly darker Parchment Cream */
+    --sidebar-foreground: 23 28% 13%; /* Dark Roast Coffee */
+    --sidebar-primary: 0 60% 40%; /* Brick Red */
+    --sidebar-primary-foreground: 46 67% 91%; /* Parchment Cream */
+    --sidebar-accent: 43 50% 46%; /* Antique Gold */
+    --sidebar-accent-foreground: 23 28% 13%; /* Dark Roast Coffee */
+    --sidebar-border: 46 50% 82%; /* Darker sidebar background */
+    --sidebar-ring: 0 60% 40%; /* Brick Red */
+  }
+
+  .dark {
+    --background: 23 15% 10%; /* Very Dark Coffee */
+    --foreground: 46 50% 85%; /* Light Parchment */
+
+    --card: 23 15% 15%; /* Slightly lighter Very Dark Coffee */
+    --card-foreground: 46 50% 85%; /* Light Parchment */
+
+    --popover: 23 15% 15%;
+    --popover-foreground: 46 50% 85%;
+
+    --primary: 0 55% 45%; /* Darker/Muted Brick Red */
+    --primary-foreground: 46 60% 90%; /* Light Parchment */
+
+    --secondary: 352 50% 35%; /* Darker/Muted Deep Burgundy */
+    --secondary-foreground: 46 60% 90%; /* Light Parchment */
+
+    --muted: 23 15% 20%; /* Dark Muted Tone */
+    --muted-foreground: 46 30% 65%; /* Lighter Muted Text */
+
+    --accent: 43 40% 50%; /* Darker/Muted Antique Gold */
+    --accent-foreground: 23 20% 90%; /* Very Light Coffee/Almost White */
+
+    --destructive: 0 70% 45%; /* Darker Red */
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 23 15% 25%; /* Subtle Border for Dark Theme */
+    --input: 23 15% 22%; /* Input Background for Dark Theme */
+    --ring: 0 55% 45%; /* Dark Primary for Ring */
+
+    --chart-1: 0 55% 45%;    /* Dark Primary (Brick Red) */
+    --chart-2: 43 40% 50%;   /* Dark Accent (Antique Gold) */
+    --chart-3: 352 50% 50%;  /* Lighter Dark Burgundy */
+    --chart-4: 46 30% 60%;   /* Medium-Light Parchment */
+    --chart-5: 23 15% 35%;   /* Darker Muted Tone */
+
+    /* Dark Sidebar specific colors */
+    --sidebar-background: 23 15% 12%; /* Slightly different from main dark bg */
+    --sidebar-foreground: 46 50% 85%; /* Light Parchment */
+    --sidebar-primary: 0 55% 45%; /* Darker Brick Red */
+    --sidebar-primary-foreground: 46 60% 90%; /* Light Parchment */
+    --sidebar-accent: 43 40% 50%; /* Darker Antique Gold */
+    --sidebar-accent-foreground: 23 20% 90%; /* Very Light Coffee */
+    --sidebar-border: 23 15% 20%;
+    --sidebar-ring: 0 55% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
