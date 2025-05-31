@@ -1,10 +1,10 @@
-
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Montserrat:wght@400;500;600&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-  font-family: 'PT Sans', sans-serif; /* Default body font */
+  font-family: "Montserrat", sans-serif; /* Default body font */
 }
 
 @layer base {
@@ -36,12 +36,12 @@ body {
     --border: 46 50% 85%; /* Border color based on Parchment Cream */
     --input: 46 60% 88%; /* Input background based on Parchment Cream */
     --ring: 0 60% 40%; /* Ring color based on Brick Red (Primary) */
-    
-    --chart-1: 0 60% 40%;   /* Primary (Brick Red) */
-    --chart-2: 43 50% 46%;  /* Accent (Antique Gold) */
+
+    --chart-1: 0 60% 40%; /* Primary (Brick Red) */
+    --chart-2: 43 50% 46%; /* Accent (Antique Gold) */
     --chart-3: 352 63% 45%; /* Lighter Deep Burgundy */
-    --chart-4: 23 28% 40%;  /* Medium Dark Roast Coffee */
-    --chart-5: 43 50% 60%;  /* Lighter Antique Gold */
+    --chart-4: 23 28% 40%; /* Medium Dark Roast Coffee */
+    --chart-5: 43 50% 60%; /* Lighter Antique Gold */
 
     --radius: 0.8rem;
 
@@ -85,11 +85,11 @@ body {
     --input: 23 15% 22%; /* Input Background for Dark Theme */
     --ring: 0 55% 45%; /* Dark Primary for Ring */
 
-    --chart-1: 0 55% 45%;    /* Dark Primary (Brick Red) */
-    --chart-2: 43 40% 50%;   /* Dark Accent (Antique Gold) */
-    --chart-3: 352 50% 50%;  /* Lighter Dark Burgundy */
-    --chart-4: 46 30% 60%;   /* Medium-Light Parchment */
-    --chart-5: 23 15% 35%;   /* Darker Muted Tone */
+    --chart-1: 0 55% 45%; /* Dark Primary (Brick Red) */
+    --chart-2: 43 40% 50%; /* Dark Accent (Antique Gold) */
+    --chart-3: 352 50% 50%; /* Lighter Dark Burgundy */
+    --chart-4: 46 30% 60%; /* Medium-Light Parchment */
+    --chart-5: 23 15% 35%; /* Darker Muted Tone */
 
     /* Dark Sidebar specific colors */
     --sidebar-background: 23 15% 12%; /* Slightly different from main dark bg */
