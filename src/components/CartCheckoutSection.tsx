@@ -23,20 +23,31 @@ export default function CartCheckoutSection({ cart, updateQuantity, removeFromCa
   const [formValid, setFormValid] = useState(false);
 
   useEffect(() => {
-    const emailRegex = /\S+@\S+\.\S+/;
-    const phoneRegex = /^\+?\d{7,15}$/;
-    setFormValid(
-      fullName.trim().length > 0 &&
-        (emailRegex.test(contact) || phoneRegex.test(contact)) &&
-        cart.length > 0
-    );
+    const contactIsValid =
+      /\S+@\S+\.\S+/.test(contact) || /^\+?\d{7,15}$/.test(contact);
+    const nameIsValid = fullName.trim().length > 0;
+    setFormValid(nameIsValid && contactIsValid && cart.length > 0);
   }, [fullName, contact, cart]);
 
-  const handlePlaceOrder = (e: React.FormEvent) => {
+  const handlePlaceOrder = async (e: React.FormEvent) => {
     e.preventDefault();
-    alert(
-      `Order placed!\nName: ${fullName}\nContact: ${contact}\nNotes: ${notes}\nItems: ${cart.length}\nTotal: $${totalPrice.toFixed(2)}`
-    );
+    const payload = {
+      cart,
+      fullName,
+      contact,
+      notes,
+      total: totalPrice,
+    };
+    const res = await fetch('/api/checkout', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+    if (res.ok) {
+      alert('Order received!');
+    } else {
+      alert('There was an error placing your order.');
+    }
   };
 
   return (
