@@ -37,7 +37,6 @@ export default function Header({ cartCount }: HeaderProps) {
 
         <nav className="hidden md:flex space-x-6 items-center">
           <a href="#flavors" className="font-medium text-charcoal hover:text-brick">Our Breads</a>
-          <a href="#checkout" className="font-medium text-charcoal hover:text-brick">Order Now</a>
           <Link href="#checkout" className="relative">
             <ShoppingCartIcon className="h-6 w-6 text-charcoal hover:text-brick" />
             {cartCount > 0 && (
@@ -59,7 +58,6 @@ export default function Header({ cartCount }: HeaderProps) {
         <nav className="md:hidden border-t border-ochre bg-parchment-light py-2">
           <ul className="flex flex-col space-y-2 px-4">
             <li><a href="#flavors" onClick={closeMenu} className="block py-2 font-medium text-charcoal hover:text-brick">Our Breads</a></li>
-            <li><a href="#checkout" onClick={closeMenu} className="block py-2 font-medium text-charcoal hover:text-brick">Order Now</a></li>
             <li>
               <Link
                 href="#checkout"
