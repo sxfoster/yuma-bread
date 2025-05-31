@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { ShoppingCartIcon, MenuIcon, XIcon } from '@heroicons/react/outline';
+import { ShoppingCartIcon, Bars3Icon as MenuIcon, XMarkIcon as XIcon } from '@heroicons/react/24/outline';
 import { useState } from 'react';
 
 interface HeaderProps {
