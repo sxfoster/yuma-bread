@@ -19,6 +19,7 @@
   </script>
 </head>
 <body>
+  <a id="cart-preview" href="/cart.html" class="cart-preview">0 Items – $0.00</a>
   <h1>Parmesan &amp; Black Pepper Loaf</h1>
   <img src="https://placehold.co/600x400" alt="Parmesan &amp; Black Pepper Loaf from Yuma Hearth Bakery">
   <p>The Parmesan &amp; Black Pepper Loaf starts with our soft sourdough base and gets a savory lift from finely grated Parmesan and cracked black pepper. We incorporate the cheese throughout the dough so every bite bursts with flavor. After a slow fermentation, loaves are baked until the crust turns a deep golden brown. The result is a fragrant bread that locals love with a bowl of tomato soup or sliced for grilled panini. It's crafted daily in downtown Yuma, right alongside our other small-batch breads. Try serving it with a drizzle of olive oil for an easy appetizer. Pairs beautifully with crisp white wines and fresh salads.</p>
@@ -26,7 +27,8 @@
     <h2>Order Details</h2>
     <p>Price: $10.00</p>
     <p>Weight: 1 lb</p>
-    <button data-loaf-id="parmesan-black-pepper-loaf">Add to Cart</button>
+    <button class="add-to-cart-btn" data-loaf-id="parmesan-black-pepper-loaf">Add to Cart</button>
+    <span class="warning" style="display:none;color:red"></span>
   </section>
   <section>
     <h2>Related Loaves</h2>
@@ -35,5 +37,6 @@
       <li><a href="jalapeno-cheddar-loaf.html">Jalapeño &amp; Cheddar Loaf</a></li>
     </ul>
   </section>
+  <script src="/js/cart.js"></script>
 </body>
 </html>

@@ -19,6 +19,7 @@
   </script>
 </head>
 <body>
+  <a id="cart-preview" href="/cart.html" class="cart-preview">0 Items – $0.00</a>
   <h1>Cinnamon-Sugar Swirl Loaf</h1>
   <img src="https://placehold.co/600x400" alt="Cinnamon-Sugar Swirl Loaf from Yuma Hearth Bakery">
   <p>The Cinnamon-Sugar Swirl Loaf starts with our soft dough enriched with butter and a hint of milk. We roll it out, sprinkle a generous layer of cinnamon and brown sugar, then roll it into a tight spiral. Baked each morning in our downtown Yuma kitchen, it fills the bakery with a sweet aroma. The loaf slices beautifully, revealing ribbons of spiced sugar. Enjoy it toasted with a smear of cream cheese or as the base for decadent French toast. Locals often serve it alongside afternoon coffee. Its delicate crumb and cinnamon warmth make every bite comforting. It's a favorite after-school snack for kids and adults alike. Treat yourself to a thick slice warmed in the oven.</p>
@@ -26,7 +27,8 @@
     <h2>Order Details</h2>
     <p>Price: $10.00</p>
     <p>Weight: 1 lb</p>
-    <button data-loaf-id="cinnamon-sugar-swirl">Add to Cart</button>
+    <button class="add-to-cart-btn" data-loaf-id="cinnamon-sugar-swirl">Add to Cart</button>
+    <span class="warning" style="display:none;color:red"></span>
   </section>
   <section>
     <h2>Related Loaves</h2>
@@ -35,5 +37,6 @@
       <li><a href="pure-hearth-loaf.html">Pure Hearth Loaf</a></li>
     </ul>
   </section>
+  <script src="/js/cart.js"></script>
 </body>
 </html>
