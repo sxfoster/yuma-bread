@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Cart - Yuma Bread</title>
+  <link rel="stylesheet" href="/css/cart.css">
+</head>
+<body>
+  <h1>Your Cart</h1>
+  <div id="empty" class="empty-message">
+    <p>Your cart is empty.</p>
+    <p><a href="/breads/">Browse Breads</a></p>
+  </div>
+  <div id="cart-container">
+    <table id="cart-table">
+      <thead>
+        <tr>
+          <th>Image</th>
+          <th>Name</th>
+          <th>Unit Price</th>
+          <th>Quantity</th>
+          <th>Subtotal</th>
+        </tr>
+      </thead>
+      <tbody id="cart-items"></tbody>
+      <tfoot>
+        <tr>
+          <td colspan="4" class="total-label">Cart Total:</td>
+          <td id="cart-total">$0.00</td>
+        </tr>
+      </tfoot>
+    </table>
+    <a href="/checkout.html" id="checkout" class="checkout-btn">Checkout</a>
+  </div>
+
+  <script src="/js/cart.js"></script>
+</body>
+</html>
