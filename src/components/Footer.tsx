@@ -1,4 +1,4 @@
-import { Facebook, Instagram } from 'lucide-react';
+import { Facebook, Instagram, Youtube } from 'lucide-react';
 
 export function Footer() {
   return (
@@ -12,7 +12,7 @@ export function Footer() {
         <div className="mt-4 flex justify-center space-x-4">
           {/* Instagram & Facebook icons as shown in the code sample */}
           <a
-            href="https://instagram.com"
+            href="https://instagram.com/yumahearth"
             aria-label="Instagram"
             target="_blank"
             rel="noopener"
@@ -20,12 +20,20 @@ export function Footer() {
             <Instagram className="h-5 w-5 text-brick hover:text-ochre transition" />
           </a>
           <a
-            href="https://facebook.com"
+            href="https://facebook.com/yumahearth"
             aria-label="Facebook"
             target="_blank"
             rel="noopener"
           >
             <Facebook className="h-5 w-5 text-brick hover:text-ochre transition" />
+          </a>
+          <a
+            href="https://youtube.com/yumahearth"
+            aria-label="YouTube"
+            target="_blank"
+            rel="noopener"
+          >
+            <Youtube className="h-5 w-5 text-brick hover:text-ochre transition" />
           </a>
         </div>
       </div>
