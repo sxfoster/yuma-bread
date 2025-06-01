@@ -28,6 +28,9 @@ export function FlavorsSection({ onAddToCart }: FlavorsSectionProps) {
                 <div className="aspect-[3/2] relative w-full">
                   <img
                     src={`https://via.placeholder.com/600x400.png?text=${encodeURIComponent(flavor.name)}`}
+                    srcSet={`https://via.placeholder.com/300x200.png?text=${encodeURIComponent(flavor.name)} 300w, https://via.placeholder.com/600x400.png?text=${encodeURIComponent(flavor.name)} 600w, https://via.placeholder.com/1200x800.png?text=${encodeURIComponent(flavor.name)} 1200w`}
+                    sizes="(max-width: 600px) 100vw, 600px"
+                    loading="lazy"
                     alt={`${flavor.name} image`}
                     className="rounded-t-lg object-cover w-full h-full"
                     data-ai-hint={flavor.imageHint}
