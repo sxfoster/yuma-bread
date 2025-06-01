@@ -18,6 +18,7 @@ export default function FlavorsSection({ cart, addToCart }: FlavorsSectionProps)
       name: "Pure Hearth Loaf",
       description:
         "A timeless artisan loaf featuring a crisp crust and tender, rustic interior.",
+      imageSrc: "/images/hearth-loaf.png",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -41,6 +42,7 @@ export default function FlavorsSection({ cart, addToCart }: FlavorsSectionProps)
       name: "Parmesan & Black Pepper Loaf",
       description:
         "A savory loaf studded with nutty Parmesan and freshly cracked black pepper.",
+      imageSrc: "/images/parm-pepper.png",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -63,6 +65,7 @@ export default function FlavorsSection({ cart, addToCart }: FlavorsSectionProps)
       id: "garlic-herb-loaf",
       name: "Garlic & Herb Loaf",
       description: "A fragrant loaf infused with minced garlic and fresh herbs.",
+      imageSrc: "/images/garlic-herb.png",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -86,6 +89,7 @@ export default function FlavorsSection({ cart, addToCart }: FlavorsSectionProps)
       name: "Jalapeño & Cheddar Loaf",
       description:
         "A bold loaf bursting with sharp cheddar cheese and chopped jalapeños.",
+      imageSrc: "/images/jalpeno-cheddar.png",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -108,6 +112,7 @@ export default function FlavorsSection({ cart, addToCart }: FlavorsSectionProps)
       id: "cinnamon-sugar-swirl-loaf",
       name: "Cinnamon-Sugar Swirl Loaf (Sweet)",
       description: "A delightfully sweet swirl loaf with cinnamon and sugar.",
+      imageSrc: "/images/cinnamon-sugar.png",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -131,6 +136,7 @@ export default function FlavorsSection({ cart, addToCart }: FlavorsSectionProps)
       name: "Honey & Oats Loaf",
       description:
         "A wholesome loaf enriched with Nikki’s Chickies honey and rolled oats.",
+      imageSrc: "/images/oat-honey.png",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -196,17 +202,7 @@ export default function FlavorsSection({ cart, addToCart }: FlavorsSectionProps)
             >
             <div className="h-48 w-full bg-gray-300">
               <img
-                src={`https://via.placeholder.com/600x400.png?text=${encodeURIComponent(
-                  flavor.name
-                )}`}
-                srcSet={`https://via.placeholder.com/300x200.png?text=${encodeURIComponent(
-                  flavor.name
-                )} 300w, https://via.placeholder.com/600x400.png?text=${encodeURIComponent(
-                  flavor.name
-                )} 600w, https://via.placeholder.com/1200x800.png?text=${encodeURIComponent(
-                  flavor.name
-                )} 1200w`}
-                sizes="(max-width: 600px) 100vw, 600px"
+                src={flavor.imageSrc}
                 loading="lazy"
                 alt={`${flavor.name} image`}
                 className="h-full w-full object-cover"
