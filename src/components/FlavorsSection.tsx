@@ -203,8 +203,7 @@ export default function FlavorsSection({ cart, addToCart }: FlavorsSectionProps)
               />
             </div>
             <div className="p-4 flex flex-col flex-grow">
-              <div className="flex items-center space-x-2">
-                {flavor.icon}
+              <div className="mb-2">
                 <h3 className="font-heading text-xl text-brick">{flavor.name}</h3>
               </div>
               <p className="mt-2 text-charcoal text-sm flex-grow">{flavor.description}</p>

@@ -35,8 +35,7 @@ export function FlavorsSection({ onAddToCart }: FlavorsSectionProps) {
                 </div>
               </CardHeader>
               <CardContent className="flex-grow p-6">
-                <div className="flex items-center mb-3">
-                  {flavor.Icon && <flavor.Icon className="h-7 w-7 text-accent mr-3" />}
+                <div className="mb-3">
                   <CardTitle className="font-headline text-2xl text-primary">{flavor.name}</CardTitle>
                 </div>
                 <CardDescription className="text-foreground text-base">
