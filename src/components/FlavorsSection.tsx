@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Wheat, Flame } from 'lucide-react';
+// Icons are defined inline for each flavor
 
 interface FlavorsSectionProps {
   cart: { id: string; name: string; price: number; quantity: number }[];
@@ -14,39 +14,138 @@ interface FlavorsSectionProps {
 export default function FlavorsSection({ cart, addToCart }: FlavorsSectionProps) {
   const flavors = [
     {
-      id: "traditional-sourdough",
-      name: "Traditional Sourdough",
+      id: "pure-hearth-loaf",
+      name: "Pure Hearth Loaf",
       description:
-        "A classic, tangy loaf with a satisfyingly chewy crust and open crumb. Perfect for any occasion.",
-      icon: <Wheat className="h-6 w-6 text-ochre" />,
-    },
-    {
-      id: "jalapeno-cheddar",
-      name: "Jalapeño Cheddar",
-      description:
-        "A fiery kick of jalapeños perfectly balanced with pockets of sharp, melted cheddar cheese.",
-      icon: <Flame className="h-6 w-6 text-ochre" />,
-    },
-    {
-      id: "honey-cinnamon-spice",
-      name: "Honey Cinnamon Spice",
-      description:
-        "A sweet and warm loaf swirled with local honey and aromatic cinnamon—perfect for a cozy morning or afternoon treat.",
+        "A timeless artisan loaf featuring a crisp crust and tender, rustic interior.",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth={2}
-          strokeLinecap="round"
-          strokeLinejoin="round"
           className="h-6 w-6 text-ochre"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
         >
-          <path d="M2 22 22 2" />
-          <path d="M7 17h0" />
-          <path d="M9 15h0" />
-          <path d="M11 13h0" />
+          {/* wheat icon SVG path */}
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M5 16l7-7 7 7M5 8l7-7 7 7"
+          />
+        </svg>
+      ),
+    },
+    {
+      id: "parmesan-black-pepper-loaf",
+      name: "Parmesan & Black Pepper Loaf",
+      description:
+        "A savory loaf studded with nutty Parmesan and freshly cracked black pepper.",
+      icon: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-6 w-6 text-ochre"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          {/* cheese icon SVG path */}
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M3 7l9-4 9 4v11H3V7z"
+          />
+        </svg>
+      ),
+    },
+    {
+      id: "garlic-herb-loaf",
+      name: "Garlic & Herb Loaf",
+      description: "A fragrant loaf infused with minced garlic and fresh herbs.",
+      icon: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-6 w-6 text-ochre"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          {/* herb icon SVG path */}
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M12 2a7 7 0 00-7 7v5h14V9a7 7 0 00-7-7z"
+          />
+        </svg>
+      ),
+    },
+    {
+      id: "jalapeno-cheddar-loaf",
+      name: "Jalapeño & Cheddar Loaf",
+      description:
+        "A bold loaf bursting with sharp cheddar cheese and chopped jalapeños.",
+      icon: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-6 w-6 text-ochre"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          {/* chili pepper icon SVG path */}
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M12 2c-1.657 0-3 1.343-3 3v2h6V5c0-1.657-1.343-3-3-3z"
+          />
+        </svg>
+      ),
+    },
+    {
+      id: "cinnamon-sugar-swirl-loaf",
+      name: "Cinnamon-Sugar Swirl Loaf (Sweet)",
+      description: "A delightfully sweet swirl loaf with cinnamon and sugar.",
+      icon: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-6 w-6 text-ochre"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          {/* swirl icon SVG path */}
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M12 4v16m0 0l-6-6m6 6l6-6"
+          />
+        </svg>
+      ),
+    },
+    {
+      id: "honey-oats-loaf",
+      name: "Honey & Oats Loaf",
+      description:
+        "A wholesome loaf enriched with Nikki’s Chickies honey and rolled oats.",
+      icon: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-6 w-6 text-ochre"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          {/* honey drop icon SVG path */}
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M12 2c0 1.38-1.12 2.5-2.5 2.5S7 3.38 7 2c0-1.38 1.12-2.5 2.5-2.5S12 0.62 12 2z"
+          />
         </svg>
       ),
     },
@@ -59,9 +158,12 @@ export default function FlavorsSection({ cart, addToCart }: FlavorsSectionProps)
   const maxPerFlavor = 5;
 
   const [quantities, setQuantities] = useState<Record<string, number>>({
-    "traditional-sourdough": 1,
-    "jalapeno-cheddar": 1,
-    "honey-cinnamon-spice": 1,
+    "pure-hearth-loaf": 1,
+    "parmesan-black-pepper-loaf": 1,
+    "garlic-herb-loaf": 1,
+    "jalapeno-cheddar-loaf": 1,
+    "cinnamon-sugar-swirl-loaf": 1,
+    "honey-oats-loaf": 1,
   });
 
   useEffect(() => {
