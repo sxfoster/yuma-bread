@@ -199,6 +199,15 @@ export default function FlavorsSection({ cart, addToCart }: FlavorsSectionProps)
                 src={`https://via.placeholder.com/600x400.png?text=${encodeURIComponent(
                   flavor.name
                 )}`}
+                srcSet={`https://via.placeholder.com/300x200.png?text=${encodeURIComponent(
+                  flavor.name
+                )} 300w, https://via.placeholder.com/600x400.png?text=${encodeURIComponent(
+                  flavor.name
+                )} 600w, https://via.placeholder.com/1200x800.png?text=${encodeURIComponent(
+                  flavor.name
+                )} 1200w`}
+                sizes="(max-width: 600px) 100vw, 600px"
+                loading="lazy"
                 alt={`${flavor.name} image`}
                 className="h-full w-full object-cover"
               />
