@@ -1,5 +1,17 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "Local Business Schema",
-  "type": "object"
+  "@context": "https://schema.org",
+  "@type": "Bakery",
+  "name": "Yuma Bread",
+  "image": "{{image}}",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "{{streetAddress}}",
+    "addressLocality": "Yuma",
+    "addressRegion": "AZ",
+    "postalCode": "{{postalCode}}",
+    "addressCountry": "US"
+  },
+  "telephone": "{{telephone}}",
+  "openingHours": "{{openingHours}}"
 }
