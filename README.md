@@ -53,3 +53,8 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 ## Document Root
 
 Ensure your web server points its document root at the `public` directory.
+
+## Image Optimization
+
+Run `node scripts/optimize_images.js` to convert images in `public/images` to WebP format with a quality setting around 70. Optimized files are written next to the originals.
+
