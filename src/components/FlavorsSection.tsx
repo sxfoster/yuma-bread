@@ -155,7 +155,8 @@ export default function FlavorsSection({ cart, addToCart }: FlavorsSectionProps)
     const found = cart.find((ci) => ci.id === flavorId);
     return found ? found.quantity : 0;
   };
-  const maxPerFlavor = 5;
+  // Maximum number of loaves a customer can purchase per flavor
+  const maxPerFlavor = 3;
 
   const [quantities, setQuantities] = useState<Record<string, number>>({
     "pure-hearth-loaf": 1,
@@ -230,7 +231,7 @@ export default function FlavorsSection({ cart, addToCart }: FlavorsSectionProps)
                         : ""
                     }`}
                   >
-                    {[...Array(5)].map((_, i) => {
+                    {[...Array(maxPerFlavor)].map((_, i) => {
                       const n = i + 1;
                       return (
                         <option key={n} value={n} disabled={n > availableToAdd}>
@@ -255,7 +256,7 @@ export default function FlavorsSection({ cart, addToCart }: FlavorsSectionProps)
                     Limit Reached
                   </button>
                   <p className="mt-2 text-center text-red-600 text-sm">
-                    You’ve reached the 5-loaf limit for {flavor.name}.
+                    You’ve reached the 3-loaf limit for {flavor.name}.
                   </p>
                 </div>
               ) : (
