@@ -21,6 +21,11 @@ export default function RootLayout({
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <meta name="theme-color" content="#F9F4E9" />
+        <meta property="og:title" content="Yuma Hearth • Artisan Bread in Yuma, AZ" />
+        <meta property="og:description" content="Order scratch-made artisan breads from Yuma Hearth. Local pickup & delivery available in Yuma, AZ." />
+        <meta property="og:image" content="https://www.yumahearth.com/images/og-homepage.jpg" />
+        <meta property="og:url" content="https://www.yumahearth.com/" />
+        <meta name="twitter:card" content="summary_large_image" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"

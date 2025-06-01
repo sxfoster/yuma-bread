@@ -41,3 +41,21 @@ Artisan sourdough’s growing popularity is the result of multiple converging tr
 The next time you bite into a slice of tangy, chewy sourdough, consider the story behind it. From the microscopic yeast that leavened the dough to the baker’s hands that shaped the loaf, you’re participating in a tradition that stretches back centuries. As more people discover the magic of artisan sourdough, its popularity will continue to rise—proof that good things truly come to those who take the time to let them develop.
 
 As local bakeries continue to innovate, expect to see new flavor combinations and grain varieties that push sourdough in exciting directions. Workshops and community bake days will further cement its role in Yuma’s food culture. Whether you’re a lifelong bread lover or just curious about the hype, there’s never been a better time to try artisan sourdough. Pair it with your favorite spreads, share it with friends, and celebrate the craftsmanship that turns a few simple ingredients into something truly memorable.
+
+<div class="share-buttons">
+  <a href="https://instagram.com/yumahearth" aria-label="Share on Instagram">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zm10 2a3 3 0 013 3v10a3 3 0 01-3 3H7a3 3 0 01-3-3V7a3 3 0 013-3h10zM12 7a5 5 0 100 10 5 5 0 000-10zm6-1a1 1 0 110 2 1 1 0 010-2z"/>
+    </svg>
+  </a>
+  <a href="https://facebook.com/sharer/sharer.php?u=https://www.yumahearth.com/" aria-label="Share on Facebook">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.99H7.898v-2.888h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562v1.875h2.773l-.443 2.888h-2.33v6.99C18.343 21.128 22 16.991 22 12z"/>
+    </svg>
+  </a>
+  <a href="https://twitter.com/intent/tweet?url=https://www.yumahearth.com/" aria-label="Share on Twitter">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M23 3a10.9 10.9 0 01-3.14 1.53A4.48 4.48 0 0016 2a4.48 4.48 0 00-4.47 4.47c0 .35.04.69.11 1.01A12.94 12.94 0 013 3.1a4.48 4.48 0 001.39 5.96A4.41 4.41 0 012 8.5v.05A4.48 4.48 0 004.47 13a4.52 4.52 0 01-2 .08A4.48 4.48 0 006.14 15a9 9 0 01-5.6 1.9A9.07 9.07 0 010 17.7a12.73 12.73 0 006.92 2.02c8.3 0 12.84-6.87 12.84-12.84 0-.2-.01-.39-.02-.58A9.22 9.22 0 0023 3z"/>
+    </svg>
+  </a>
+</div>
