@@ -19,6 +19,7 @@
   </script>
 </head>
 <body>
+  <a id="cart-preview" href="/cart.html" class="cart-preview">0 Items – $0.00</a>
   <h1>Pure Hearth Loaf</h1>
   <img src="https://placehold.co/600x400" alt="Pure Hearth Loaf from Yuma Hearth Bakery">
   <p>Crafted from our four-ingredient base of flour, water, salt, and yeast, the Pure Hearth Loaf celebrates simplicity. Each loaf rises slowly overnight, building depth and flavor. Baked in small batches every morning in downtown Yuma, this crusty bread boasts a tender crumb and mild tang. Its versatile character makes it equally at home in a pressed sandwich or alongside a bowl of soup. Try it with local olive oil and sea salt or toast it for breakfast. We love how it pairs with everything from roasted meats to garden-fresh salads. Serve it with a smear of butter and local honey for a simple treat.</p>
@@ -26,7 +27,8 @@
     <h2>Order Details</h2>
     <p>Price: $10.00</p>
     <p>Weight: 1 lb</p>
-    <button data-loaf-id="pure-hearth-loaf">Add to Cart</button>
+    <button class="add-to-cart-btn" data-loaf-id="pure-hearth-loaf">Add to Cart</button>
+    <span class="warning" style="display:none;color:red"></span>
   </section>
   <section>
     <h2>Related Loaves</h2>
@@ -35,5 +37,6 @@
       <li><a href="garlic-herb-loaf.html">Garlic &amp; Herb Loaf</a></li>
     </ul>
   </section>
+  <script src="/js/cart.js"></script>
 </body>
 </html>
