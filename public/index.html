@@ -5,26 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Yuma Hearth • Artisan Bread in Yuma, AZ | Order Online for Pickup & Delivery</title>
   <meta name="description" content="Order scratch-made artisan breads from Yuma Hearth. Local pickup & delivery available in Yuma, AZ. Sourdough, hearth breads, and more!">
-  <style>
-    body{margin:0;font-family:Arial,Helvetica,sans-serif;line-height:1.6;color:#333;}
-    nav{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;padding:0.5rem 1rem;background:#fafafa;border-bottom:1px solid #ddd;}
-    nav ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:0.5rem;}
-    nav a{text-decoration:none;color:#333;padding:0.5rem;}
-    .cart-preview{margin-left:auto;font-weight:bold;}
-    .hero{background:#f0ede9;padding:3rem 1rem;text-align:center;}
-    .hero h2{margin-top:0;font-size:1.8rem;}
-    .cta{display:inline-block;margin-top:1rem;padding:0.75rem 1.5rem;background:#b5533d;color:#fff;text-decoration:none;border-radius:4px;}
-    .featured{max-width:1200px;margin:2rem auto;padding:0 1rem;}
-    .featured-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;}
-    .loaf-card{border:1px solid #ddd;padding:1rem;text-align:center;border-radius:4px;}
-    .loaf-card img{width:100%;height:auto;border-radius:4px;}
-    .why,.blog{max-width:1200px;margin:2rem auto;padding:0 1rem;}
-    .why ul{padding-left:1.2rem;}
-    .blog-articles{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1rem;}
-    footer{background:#333;color:#fff;padding:2rem 1rem;text-align:center;margin-top:2rem;}
-    .social a{color:#fff;margin:0 0.5rem;text-decoration:none;}
-    @media (max-width:600px){.cart-preview{width:100%;text-align:right;margin-top:0.5rem;}}
-  </style>
+  <link rel="stylesheet" href="/css/styles.min.css">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -45,8 +26,9 @@
   </script>
 </head>
 <body>
-  <nav>
-    <ul>
+  <nav class="header">
+    <button class="nav-toggle" aria-label="Menu">&#9776;</button>
+    <ul class="nav-menu">
       <li><a href="/">Home</a></li>
       <li><a href="/breads/">Breads</a></li>
       <li><a href="/sourdough/">Sourdough</a></li>
